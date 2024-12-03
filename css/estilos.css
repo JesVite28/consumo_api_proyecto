@@ -1,0 +1,154 @@
+/* Estilos base */
+:root {
+    --fuente_principal: "Montserrat", sans-serif;
+    --textoNegrita: 900;
+    --textoNormal: 400;
+    --textoThin: 100;
+
+    --colorPrincipal: #100a1f;
+    --btnpaginacion: #241744;
+	--colorfuente: #fff;
+	--btnhover: #137c32;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente_principal);
+    background: #e0e0e0;
+}
+
+.navbar {
+    width: 100%;
+    background: var(--colorPrincipal);
+    color: var(--colorfuente);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav_titulo {
+    margin: 0;
+    font-size: 24px;
+    font-family: var(--fuente_principal);
+    font-weight: var(--textoNegrita);
+}
+.titulo_categoria{
+	text-align: center;
+	padding-top: 20px;
+}
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 100px auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.contenedor .coctel {
+    text-align: center;
+}
+
+.contenedor .coctel .titulo {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contenedor .coctel .poster {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.paginacion {
+    position: fixed;
+    bottom: 0;
+    background: var(--colorPrincipal);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.paginacion button {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    background: var(--btnpaginacion);
+    color: var(--colorfuente);
+    border-radius: 100px;
+    font-family: var(--fuente_principal);
+    font-weight: var(--textoNegrita);
+    transition: .3s ease all;
+}
+
+.paginacion button:hover {
+    background: var(--btnhover);
+}
+
+/* Media Queries para tablets */
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .navbar {
+        font-size: 18px;
+        padding: 15px 0;
+    }
+
+    .nav_titulo {
+        font-size: 20px;
+    }
+
+	.titulo_categoria{
+		font-size: 20px;
+	}
+    .paginacion button {
+        width: 150px;
+        font-size: 14px;
+    }
+}
+
+/* Media Queries para celulares */
+@media (max-width: 480px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .navbar {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    .nav_titulo {
+        font-size: 18px;
+    }
+
+	.titulo_categoria{
+        font-size: 18px;
+    }
+    .paginacion {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .paginacion button {
+        width: 100%;
+        font-size: 12px;
+    }
+}
